@@ -20,7 +20,7 @@
             if(component.isValid() && state == "SUCCESS"){
                 console.log('woohooo success!');
             } else {
-                console.log('booo there was a problem and the state is: '+state);
+                console.log('There was a problem and the state is: '+state);
             }
         });
         $A.enqueueAction(action);
