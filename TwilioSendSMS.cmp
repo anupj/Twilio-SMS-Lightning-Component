@@ -1,0 +1,20 @@
+<aura:component controller="TwilioSendSMSController" implements="flexipage:availableForAllPageTypes" >
+    <ltng:require scripts="/resource/jquery_1_11_3, /resource/bootstrapjs" />
+    <ltng:require styles="/resource/bootstrap" />
+    <aura:attribute name="destinationNumber" type="String" />
+    <aura:attribute name="textMessage" type="String" />
+    <aura:attribute name="messageError" type="String" />
+    <aura:attribute name="accountSID" type="String" />
+    <aura:attribute name="token" type="String" />
+    <aura:attribute name="twiPhoneNumber" type="String" />
+    <div class="container bg-info">
+        <div class="form-group">
+            <h3><aura:text value="Please enter the mobile number and message (max 160 char) below:" /></h3>
+            <ui:inputNumber class="form-control large-font" aura:id="mobileNum" label="Mobile Number" value="{!v.destinationNumber}" required="true" />
+            <ui:inputText class="form-control large-font" aura:id="message" label="Text Message" value="{!v.textMessage}" required="true" maxlength="160" size="165" />
+            <div class="centered">
+            	<button class="btn btn-primary btn-lg" type="submit" onclick="{!c.sendMessage}">Send Message</button>
+            </div>
+        </div>
+    </div>
+</aura:component>

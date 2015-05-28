@@ -1,0 +1,33 @@
+/*
+* Apex controller that currently contains only one method to send sms message
+*/
+public class TwilioSendSMSController {
+
+		/*
+		* This method uses the Twilio for Salesforce library class and method to
+		* send the message using the Twilio api.
+		*/
+	  @AuraEnabled
+    public static String sendMessages(String accSid, String tok, String twiNum, String mobNumber, String message) {
+        System.debug('the mobNumber is: '+mobNumber + ' and the message is: '+message);
+
+        String accountSid = accSid;
+        String token   = tok;
+        try {
+
+            TwilioRestClient client = new TwilioRestClient(accountSid, token);
+
+            Map<String,String> params = new Map<String,String> {
+                    'To'   => mobNumber,
+                    'From' => twiNum,
+                    'Body' => message
+                };
+            TwilioSMS sms = client.getAccount().getSMSMessages().create(params);
+            return 'success';
+        } catch(exception ex) {
+            System.debug('oh no, it failed: '+ex);
+            return 'failed';
+        }
+
+    }
+}

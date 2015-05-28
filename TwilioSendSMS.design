@@ -1,0 +1,5 @@
+<design:component>
+    <design:attribute name="accountSID" label="Twilio Account SID" description="Your Twilio Account SID" />
+    <design:attribute name="token" label="API Token" description="Your Twilio API Token" />
+    <design:attribute name="twiPhoneNumber" label="Twilio Phone" description="Your Twilio Phone Number" />
+</design:component>
