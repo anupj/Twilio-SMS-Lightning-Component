@@ -1,5 +1,5 @@
 # Twilio-SMS-Lightning-Component
-![Twilio-SMS-Lightning-Component](TwilioSMSComponent.png)
+![Twilio-SMS-Lightning-Component](src/TwilioSMSComponent.png)
 
 Twilio SMS Lightning component lets users to send sms from inside Salesforce in the browser
 or in the Salesforce1 app.
